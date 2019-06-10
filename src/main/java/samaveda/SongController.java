@@ -17,7 +17,7 @@ public class SongController {
     public Song track(@RequestParam(value="id") String id) {
         Track track = TrackGetter.getTrack(id);
 
-        Song song = new Song(track.getName(), id);
+        Song song = new Song(track.getName(), id, track.getArtists(), track.getAlbum());
 
         return song;
     }
